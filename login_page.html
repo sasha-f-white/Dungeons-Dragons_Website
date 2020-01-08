@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> login </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Brendan Aucoin">
+        <link rel="stylesheet" href="login_styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body style = "background-color:#D7DBDD">
+        <div class = "middle_box">
+                <h1 style = "font-size:4em;"> Please Login </h1>
+                <br/>
+				<!-- validate the form by making sure they enter in the right number of digits for a username,email and password -->
+                <form onSubmit = "return validateTextFields()" action = "http://webdev.scs.ryerson.ca/~baucoin/DnD_website/login.php" method = "post">
+						<!-- a text field that will display the text user name or whatver the action is for the textfield when its empty to tell the user-->
+					   <input style = "margin-bottom:0.2em;font-size:2em;" id = "user_name" type = "text"
+                                name = "userName"
+                                placeholder="User Name"
+                                onchange = "if(this.value == ''){this.placeholder = 'User Name'}"
+                                onkeydown = "removeText()"
+                                        size = 30;
+                                >  </input><br/>
+                                <input style = "margin-bottom:.2em; font-size:2em" type = "password"  id = "password"
+                                        placeholder ="Password"
+                                        name = "password"
+                                        onkeydown = "removeText()"
+                                        onchange = "if(this.value == ''){this.placeholder = 'Password'}"
+                                        size = 30;
+                                >  </input><br/><br/><div id = "validate"> </div>
+                                <input type = "submit" value = "Login" />
+                                <br/><br/>
+                                <a href = "sign_up.html"> create an account </a>
+                                <br/><br/>
+                </form>
+
+
+
+        </div>
+   <script>
+
+                canClick = false;//if the user can click the button or not
+				/*this function will make it so that if the user has completed the credentials then the text saying to fix the input will go away*/
+                function removeText(){
+                        if(!canClick){
+                                document.getElementById("validate").innerHTML = "";
+                        }
+                }
+				/*this will make sure that the username and password are of proper length*/
+                function validateTextFields(){
+                        let userName = document.getElementById("user_name");//get the elements from the html
+                        let password = document.getElementById("password");
+                        if(userName.value.length >0 && password.value.length >0){
+                                canClick = true;//make it so the user can click on the login button
+                                return true;
+                        }
+						//if the user is not allowed to click on the button then display this red text telling the user to fill out the fields
+                        else{
+                                let validateText = document.getElementById("validate");
+                                validateText.innerHTML = "<span style = 'color:red;'> Please fill out the user name and password fields. </span>";
+                                canClick = false;
+                                return false;
+                        }
+
+                }
+        </script>
+</body>
+
+</html>
+                                                    

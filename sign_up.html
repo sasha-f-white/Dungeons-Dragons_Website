@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title> Sign up </title>
+                <meta charset="UTF-8">
+                <meta name="author" content="Brendan Aucoin">
+                <link rel="stylesheet" href="sign_up.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        </head>
+
+        <body style="background-color:#A6ACAF;">
+                <div class = "middle_box">
+                        <div class = "top_box"><span> Sign up </span></div>
+						<!-- a form that displays the textfields and the button with form valdation-->
+                        <form onSubmit = "return validate()" action = "http://webdev.scs.ryerson.ca/~baucoin/DnD_website/create_account.php" method = "post">
+                        <br/>
+
+                        <input class = "text" id = "user_name" type = "text"
+                        name = "userName"
+                        placeholder="User Name"
+                        onchange = "if(this.value == ''){this.placeholder = 'User Name'} validateUserName()"
+                                size = 50;
+                        >  </input><div id = "user_name_text"> </div>
+
+                        <br/>
+                        <input class = "text" type = "text" id = "email"
+                                placeholder = "Email"
+                                name = "email"
+                                onchange = "if(this.value == ''){this.placeholder = 'Email'} validateEmail()"
+                                size = 50;
+                        >  </input><div id = "email_text"> </div>
+
+                        <br/>
+                        <input style = "border-radius:8%; margin-bottom:.5em; font-size:1.4em" type = "password"  id = "password"
+                                placeholder ="Password"
+                                name = "password"
+                                onchange = "if(this.value == ''){this.placeholder = 'Password'} validatePassword()"
+                                size = 50;
+                        >  </input><div id = "password_text"> </div>
+
+                        <br/>
+ <input style = " border-radius:8%; margin-bottom:.5em; font-size:1.4em" type = "password" id = "confirm_password"
+                                placeholder = "Confirm Password"
+                                onchange = "if(this.value == ''){this.placeholder = 'Confirm Password'} validateConfirmPassword(event)"
+                                onkeypress = "validateConfirmPassword(event)"
+                                onkeyup = "validateConfirmPassword(event)"
+                                size = 50;
+                        >  </input><div id = "password_confirm_text"> </div>
+
+                        <br/>
+                        <input id = "submit" type = "submit" value = "Create Account">  </input>
+                        </form>
+                </div>
+
+                <script type="text/javascript">
+                let innerHTML = "<span style = 'color:red;'>  </span>";
+				/*this function verifys that the username the user enters is between 7 and 40 characters*/
+                function validateUserName(){
+                        let userName = document.getElementById("user_name");
+                        let userNameText = document.getElementById('user_name_text');
+                        if(userName.value.length < 7 || userName.value.length > 40){
+                                displayValidationText(userNameText,"User name must be between 7 and 40 characters long");//show text to the user saying that they need to fix their username
+                                return false;
+                        }
+                        else{
+                                resetValidationText(userNameText);//if their input is valid then get rid of the red text
+                                return true;
+                        }
+                }
+				/*making sure the email the user enters is between 5 and 40 characters*/
+				function validateEmail(){
+                        let email = document.getElementById("email");
+                        let emailText = document.getElementById('email_text');
+                        if(email.value.length > 40 || email.value.length < 5){
+                                displayValidationText(emailText,"email must be between 5 and 40 characters long");
+                                return false;
+                        }
+                        else{
+                                resetValidationText(emailText);
+                                return true;
+                        }
+                }
+				/*making sure the password 6-16 characters with a number and a special character*/
+                function validatePassword(){
+                        let expr = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;//the expression that matches to the input the user enters
+                        let password = document.getElementById("password");
+                        let passwordText = document.getElementById("password_text");
+                        if(!password.value.match(expr)){
+                                displayValidationText(passwordText,"Password must be 6-16 characters long with a number and a special character");
+                                return false;
+                        }
+                        else{
+                                resetValidationText(passwordText);
+                                return true;
+                        }
+
+                }
+				/*make it so that the red text displays everytime the user enters as long as the input is not equal to the password text*/
+				function validateConfirmPassword(e){
+                        let confirmPassword = document.getElementById("confirm_password");
+                        let confirmPasswordText= document.getElementById("password_confirm_text");
+                        let password = document.getElementById("password");
+                        if(confirmPassword.value == password.value){
+                                resetValidationText(confirmPasswordText);
+                                return true;
+                        }
+                        else{
+                                displayValidationText(confirmPasswordText,"Password does not match");
+                                return false;
+                        }
+                }
+				/*return the validation of all the validations*/
+                function validate(){
+                                return validateUserName() && validatePassword() && validateConfirmPassword() && validateEmail();
+                }
+				/*display red text on some element with some text you pass in*/
+				function displayValidationText(elem,text){
+                                elem.innerHTML = innerHTML;
+                                elem.innerText = text;
+                                elem.style = "color:red;";
+                                document.getElementById("submit").disabled = true;
+				}
+				/*reset the red validation text*/
+				function resetValidationText(elem){
+                                elem.innerHTML = "";
+                                elem.style = "";
+                                document.getElementById("submit").disabled = false;
+                        }
+                </script>
+        </body>
+</html>

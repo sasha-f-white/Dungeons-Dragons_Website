@@ -1,0 +1,141 @@
+body {
+    overflow-x:hidden;
+}
+h2{
+        text-align:center;
+}
+
+div.top_bar{
+        background-color:#1C2833;
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+}
+
+button.top_button{
+        font-size:2em;
+        background-color:#1C2833;
+        color:white;
+        margin-right:2em;
+        outline:none;
+        border:none;
+        margin-top:0.3em;
+        margin-bottom:0.3em;
+        margin-left:0.2em;
+}
+button.top_button:hover{
+        color:#EC7063;
+
+}
+.core_stats{
+        border:2px solid grey;
+        border-radius:25%;
+        text-align:center;
+        margin-top:0.3em;
+        margin-bottom:2em;
+        margin-left:0.5em;
+}
+div.middleNumber{
+        border: 1px solid grey;
+        text-align:center;
+        border-radius:50%;
+        width:50%;
+        margin-bottom:0.5em;
+        margin-left:25%;
+}
+
+p.middleNumber{
+        padding-top:0.5em;
+        font-size:1.5em;
+
+}
+
+
+input[type = "text"].straightLine{
+        border:none;
+        outline: 0;
+        background:transparent;
+        border-bottom: 1px solid #212F3D;
+        text-align:center;
+}
+
+input[type = "text"].straightLine:hover,
+input[type = "text"].straightLine:focus{
+        border-bottom:1px solid #7F8C8D;
+}
+
+div.savingThrows,
+div.skills{
+        border:2px solid grey;
+        border-radius:10%;
+        padding-top:1em;
+        padding-bottom:1em;
+        padding-right:1em;
+        padding-left:1em;
+        width:100%;
+}
+input[type = "text"].savingThrows,
+input[type = "text"].skills{
+        margin-left:1em;
+}
+span.savingThrows,
+span.skills{
+        margin-left:1em;
+}
+
+div.attack_spells{
+        display:flex;
+        border-radius:0%;
+        border:2px solid grey;
+
+}
+
+td.padd,
+th.padd{
+        padding-left:2em;
+        padding-right:1.5em;
+        padding-bottom:1em;
+
+}
+
+td.padd input[type = "text"]{
+        background-color:#99A3A4;
+        color:white;
+        border:none;
+        text-align:center;
+}
+textarea.paper{
+         background-attachment: local;
+    background-image:
+        linear-gradient(to right, white 10px, transparent 10px),
+        linear-gradient(to left, white 10px, transparent 10px),
+        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    line-height: 31px;
+    padding: 8px 10px;
+        float:left;
+        resize: none;
+        margin-bottom:2em;
+        width:100%;
+}
+
+
+input[type=text].name{
+        background-color:#2D9EA9;
+        color:white;
+}
+.outerDiv{
+        margin-left:3em;
+}
+
+
+
+.name{
+        outline: 0;
+        border-radius:15%;
+        font-size:1.5em;
+        background-color:#2D9EA9;
+        color:white;
+        width:100%;
+}
+                                

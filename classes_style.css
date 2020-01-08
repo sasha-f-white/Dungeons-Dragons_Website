@@ -1,0 +1,25 @@
+div.icons{
+  background-color: #1b6e76;
+  width:100%;
+  text-align:center;
+
+}
+
+
+img.icon{
+        background-color: #ea5d16;
+        border-radius:50%;
+        margin-bottom:0.75em;
+        margin-right:3.5em;
+        margin-top:2em;
+        margin-left:0.5em;
+
+
+}
+.aboveText{
+display:block;
+}
+
+img.icon:hover{
+         background-color: yellow;
+}

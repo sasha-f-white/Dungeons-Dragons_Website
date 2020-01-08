@@ -1,0 +1,27 @@
+.middle_box{
+  position:absolute;
+  top:25%;
+  left:40%;
+  margin-top:-50px;
+  margin-left:-100px;
+  padding-botom:2em;
+  padding-right:2em;
+  padding-left:2em;
+  background-color:white;
+}
+h1{
+        text-align:center;
+
+}
+
+input[type = "submit"]{
+        width:100%;
+        background-color:#45AECF;
+        border-radius:15%;
+        font-size:2.5em;
+        color:white;
+}
+input[type=submit]:hover{
+        color:#F4F6F7;
+        background-color:#2E83D3;
+}

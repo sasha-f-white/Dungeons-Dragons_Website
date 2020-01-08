@@ -1,0 +1,60 @@
+h1{
+        font-size:3em;
+}
+input[type=text],
+input[type=password]{
+        margin-bottom:.5em;
+}
+.text{
+        font-size:1.4em;
+        border-radius:8%;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+outline: none;
+box-shadow: 0px 0px 5px #61C5FA;
+border:1px solid #5AB0DB;
+}
+.middle_box{
+  position:absolute;
+  top:25%;
+  left:37%;
+  margin-top:-50px;
+  margin-left:-100px;
+  padding-left:2em;
+  padding-right:2em;
+  padding-top:2em;
+  padding-botom:2em;
+
+}
+.top_box{
+        width:100%;
+        background-color:#273746;
+        text-align:left;
+
+}
+.top_box span{
+        font-size:3.5em;
+        color:white;
+}
+input[type=submit]{
+        background-color:#3BA3E7;
+        border:none;
+        color:white;
+        text-align:center;
+        text-decoration:none;
+        display:inline-block;
+        cursor:pointer;
+        padding-left:2em;
+        padding-right:2em;
+        border-radius:10%;
+        font-size:1.5em;
+}
+input[type=submit]:hover{
+        color:#F4F6F7;
+        background-color:#2E83D3;
+}
+input[type = submit]:disabled{
+        color:grey;
+        cursor:auto;
+}
